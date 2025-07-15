@@ -55,11 +55,11 @@
 	<distributionManagement>
 		<snapshotRepository>
 			<id>github</id>
-			<url>https://maven.pkg.github.com/smit-joshi-addon/result-pattern</url>
+			<url>https://maven.pkg.github.com/smit-joshi-addon/spring-boot-result-starter</url>
 		</snapshotRepository>
 		<repository>
 			<id>github</id>
-			<url>https://maven.pkg.github.com/smit-joshi-addon/result-pattern</url>
+			<url>https://maven.pkg.github.com/smit-joshi-addon/spring-boot-result-starter</url>
 		</repository>
 	</distributionManagement>
 </project>
