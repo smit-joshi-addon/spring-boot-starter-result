@@ -50,4 +50,16 @@
 		</dependency>
 
 	</dependencies>
+
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>github</id>
+			<url>https://maven.pkg.github.com/smit-joshi-addon/result-pattern</url>
+		</snapshotRepository>
+		<repository>
+			<id>github</id>
+			<url>https://maven.pkg.github.com/smit-joshi-addon/result-pattern</url>
+		</repository>
+	</distributionManagement>
 </project>
