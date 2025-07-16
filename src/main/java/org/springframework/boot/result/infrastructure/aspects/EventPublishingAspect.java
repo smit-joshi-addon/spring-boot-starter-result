@@ -1,11 +1,11 @@
-package org.springframework.boot.starter.result.infrastructure.aspects;
+package org.springframework.boot.result.infrastructure.aspects;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.springframework.boot.starter.result.Result;
-import org.springframework.boot.starter.result.annotations.PublishEvent;
-import org.springframework.boot.starter.result.domain.events.ResultEvent;
+import org.springframework.boot.result.Result;
+import org.springframework.boot.result.annotations.PublishEvent;
+import org.springframework.boot.result.domain.events.ResultEvent;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 

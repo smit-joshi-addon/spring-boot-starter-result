@@ -1,16 +1,32 @@
-package org.springframework.boot.starter.result.api;
+package org.springframework.boot.result.api;
 
+import org.springframework.boot.result.ResponseWrapper;
+import org.springframework.boot.result.Result;
+import org.springframework.boot.result.domain.errors.EntityAlreadyExistsError;
+import org.springframework.boot.result.domain.errors.EntityNotFoundError;
+import org.springframework.boot.result.domain.errors.Error;
+import org.springframework.boot.result.domain.errors.UnauthorizedError;
+import org.springframework.boot.result.domain.errors.ValidationError;
+import org.springframework.boot.result.infrastructure.config.ResultConstantsProvider;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.boot.starter.result.ResponseWrapper;
-import org.springframework.boot.starter.result.Result;
-import org.springframework.boot.starter.result.domain.errors.EntityAlreadyExistsError;
-import org.springframework.boot.starter.result.domain.errors.EntityNotFoundError;
-import org.springframework.boot.starter.result.domain.errors.Error;
-import org.springframework.boot.starter.result.domain.errors.UnauthorizedError;
-import org.springframework.boot.starter.result.domain.errors.ValidationError;
-import org.springframework.boot.starter.result.infrastructure.config.ResultConstantsProvider;
 
+/**
+ * Utility class for converting Result objects to HTTP ResponseEntity objects.
+ * 
+ * <p>This class provides methods to automatically convert Result objects to appropriate
+ * HTTP responses with correct status codes and response format.</p>
+ * 
+ * <p>Example usage:</p>
+ * <pre>{@code
+ * Result<User> result = userService.findById(id);
+ * return ResponseUtils.asResponse(result);
+ * }</pre>
+ * 
+ * @author Smit Joshi
+ * @see <a href="https://in.linkedin.com/in/smit-joshi814">LinkedIn Profile</a>
+ * @since 0.0.1
+ */
 public final class ResponseUtils {
 
     public static <T> ResponseEntity<ResponseWrapper<T>> success(T data, String message, HttpStatus status) {
@@ -41,6 +57,23 @@ public final class ResponseUtils {
                 .body(ResponseWrapper.failure(ResultConstantsProvider.getResultConstants().getSuccessMessage()));
     }
 
+    /**
+     * Converts a Result to an appropriate HTTP ResponseEntity.
+     * 
+     * <p>Automatically maps error types to HTTP status codes:</p>
+     * <ul>
+     *   <li>EntityNotFoundError → 404 NOT_FOUND</li>
+     *   <li>ValidationError → 400 BAD_REQUEST</li>
+     *   <li>UnauthorizedError → 401 UNAUTHORIZED</li>
+     *   <li>EntityAlreadyExistsError → 409 CONFLICT</li>
+     *   <li>Other errors → 500 INTERNAL_SERVER_ERROR</li>
+     *   <li>Success → 200 OK</li>
+     * </ul>
+     * 
+     * @param <T> the type of data
+     * @param result the Result to convert
+     * @return ResponseEntity with appropriate status code and response wrapper
+     */
     public static <T> ResponseEntity<ResponseWrapper<T>> asResponse(Result<T> result) {
         if (!result.isSuccess())
             return asError(result.getError());

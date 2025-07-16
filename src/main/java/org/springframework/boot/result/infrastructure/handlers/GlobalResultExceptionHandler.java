@@ -1,12 +1,12 @@
-package org.springframework.boot.starter.result.infrastructure.handlers;
+package org.springframework.boot.result.infrastructure.handlers;
 
-import org.springframework.boot.starter.result.ResponseWrapper;
-import org.springframework.boot.starter.result.Result;
-import org.springframework.boot.starter.result.api.ResponseUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.boot.result.ResponseWrapper;
+import org.springframework.boot.result.Result;
+import org.springframework.boot.result.api.ResponseUtils;
 import org.springframework.dao.DataIntegrityViolationException;
 
 @ControllerAdvice

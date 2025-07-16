@@ -1,6 +1,6 @@
-package org.springframework.boot.starter.result.domain.events;
+package org.springframework.boot.result.domain.events;
 
-import org.springframework.boot.starter.result.Result;
+import org.springframework.boot.result.Result;
 import org.springframework.context.ApplicationEvent;
 
 public final class ResultEvent<T> extends ApplicationEvent {

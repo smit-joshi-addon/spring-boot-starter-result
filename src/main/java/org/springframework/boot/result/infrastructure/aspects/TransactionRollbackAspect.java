@@ -1,9 +1,9 @@
-package org.springframework.boot.starter.result.infrastructure.aspects;
+package org.springframework.boot.result.infrastructure.aspects;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.springframework.boot.starter.result.internal.TransactionalOperation;
+import org.springframework.boot.result.internal.TransactionalOperation;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.interceptor.TransactionAspectSupport;
 

@@ -1,6 +1,6 @@
-package org.springframework.boot.starter.result;
+package org.springframework.boot.result;
 
-import org.springframework.boot.starter.result.domain.errors.Error;
+import org.springframework.boot.result.domain.errors.Error;
 
 sealed class ResultBase permits Result {
     private boolean success;

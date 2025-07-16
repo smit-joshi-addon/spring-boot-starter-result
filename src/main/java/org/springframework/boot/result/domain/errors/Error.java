@@ -1,4 +1,4 @@
-package org.springframework.boot.starter.result.domain.errors;
+package org.springframework.boot.result.domain.errors;
 
 public class Error {
     private String message;

@@ -1,4 +1,4 @@
-package org.springframework.boot.starter.result.infrastructure.config;
+package org.springframework.boot.result.infrastructure.config;
 
 public final class DefaultResultConstants implements ResultConstants {
 

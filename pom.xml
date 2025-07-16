@@ -14,12 +14,23 @@
 	<version>0.0.1</version>
 	<name>result-pattern</name>
 	<description>Spring Boot starter for Result Pattern implementation</description>
-	<url/>
+	<url>https://github.com/smit-joshi814/spring-boot-result-starter</url>
 	<licenses>
-		<license/>
+		<license>
+			<name>MIT License</name>
+			<url>https://opensource.org/licenses/MIT</url>
+		</license>
 	</licenses>
 	<developers>
-		<developer/>
+		<developer>
+			<id>smit-joshi814</id>
+			<name>Smit Joshi</name>
+			<email>worksmitjoshi@gmail.com</email>
+			<url>https://in.linkedin.com/in/smit-joshi814</url>
+			<roles>
+				<role>developer</role>
+			</roles>
+		</developer>
 	</developers>
 	<scm>
 		<connection/>

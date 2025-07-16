@@ -1,15 +1,16 @@
-package org.springframework.boot.starter.result;
-
-import org.springframework.boot.starter.result.domain.errors.EntityAlreadyExistsError;
-import org.springframework.boot.starter.result.domain.errors.EntityNotFoundError;
-import org.springframework.boot.starter.result.domain.errors.Error;
-import org.springframework.boot.starter.result.domain.errors.UnauthorizedError;
-import org.springframework.boot.starter.result.domain.errors.ValidationError;
-import org.springframework.boot.starter.result.infrastructure.config.ResultConstantsProvider;
-import org.springframework.boot.starter.result.internal.TransactionalOperation;
+package org.springframework.boot.result;
 
 import java.util.function.Function;
 import java.util.function.Predicate;
+
+import org.springframework.boot.result.domain.errors.EntityAlreadyExistsError;
+import org.springframework.boot.result.domain.errors.EntityNotFoundError;
+import org.springframework.boot.result.domain.errors.Error;
+import org.springframework.boot.result.domain.errors.UnauthorizedError;
+import org.springframework.boot.result.domain.errors.ValidationError;
+import org.springframework.boot.result.infrastructure.config.ResultConstantsProvider;
+import org.springframework.boot.result.internal.TransactionalOperation;
+
 import java.util.concurrent.CompletableFuture;
 import java.util.List;
 import java.util.ArrayList;
@@ -31,7 +32,8 @@ import java.util.ArrayList;
  * }</pre>
  * 
  * @param <T> the type of data contained in successful results
- * @author Spring Boot Result Starter
+ * @author Smit Joshi
+ * @see <a href="https://in.linkedin.com/in/smit-joshi814">LinkedIn Profile</a>
  * @since 0.0.1
  */
 public final class Result<T> extends ResultBase implements TransactionalOperation {
@@ -69,6 +71,13 @@ public final class Result<T> extends ResultBase implements TransactionalOperatio
         return message;
     }
 
+    /**
+     * Creates a successful Result with data.
+     * 
+     * @param <T> the type of data
+     * @param data the success data
+     * @return successful Result
+     */
     public static <T> Result<T> success(T data) {
         return new Result<T>(data);
     }
@@ -93,6 +102,13 @@ public final class Result<T> extends ResultBase implements TransactionalOperatio
         return new Result<T>(false, new UnauthorizedError(message));
     }
 
+    /**
+     * Creates an entity not found error Result.
+     * 
+     * @param <T> the type of data
+     * @param message the error message
+     * @return entity not found error Result
+     */
     public static <T> Result<T> entityNotFoundError(String message) {
         return new Result<T>(false, new EntityNotFoundError(message));
     }
@@ -101,6 +117,13 @@ public final class Result<T> extends ResultBase implements TransactionalOperatio
         return new Result<T>(false, new EntityAlreadyExistsError(message));
     }
 
+    /**
+     * Creates a validation error Result.
+     * 
+     * @param <T> the type of data
+     * @param message the error message
+     * @return validation error Result
+     */
     public static <T> Result<T> validationError(String message) {
         return new Result<T>(false, new ValidationError(message));
     }
