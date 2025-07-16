@@ -10,7 +10,7 @@
 		<!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.springframework.boot</groupId>
-	<artifactId>spring-boot-result-starter</artifactId>
+	<artifactId>spring-boot-starter-result</artifactId>
 	<version>0.0.1</version>
 	<name>result-pattern</name>
 	<description>Spring Boot starter for Result Pattern implementation</description>
@@ -55,11 +55,11 @@
 	<distributionManagement>
 		<snapshotRepository>
 			<id>github</id>
-			<url>https://maven.pkg.github.com/smit-joshi-addon/spring-boot-result-starter</url>
+			<url>https://maven.pkg.github.com/smit-joshi-addon/spring-boot-starter-result</url>
 		</snapshotRepository>
 		<repository>
 			<id>github</id>
-			<url>https://maven.pkg.github.com/smit-joshi-addon/spring-boot-result-starter</url>
+			<url>https://maven.pkg.github.com/smit-joshi-addon/spring-boot-starter-result</url>
 		</repository>
 	</distributionManagement>
 </project>
