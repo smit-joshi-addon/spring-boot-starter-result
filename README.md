@@ -8,14 +8,14 @@ A Spring Boot library that implements the Result pattern for elegant error handl
 ```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-result-starter</artifactId>
-    <version>1.0.0</version>
+    <artifactId>spring-boot-starter-result</artifactId>
+    <version>0.0.1</version>
 </dependency>
 ```
 
 ### Gradle
 ```gradle
-implementation 'org.springframework.boot:spring-boot-result-starter:1.0.0'
+implementation 'org.springframework.boot:spring-boot-starter-result:0.0.1'
 ```
 
 ## Usage

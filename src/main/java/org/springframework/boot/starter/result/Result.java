@@ -14,6 +14,26 @@ import java.util.concurrent.CompletableFuture;
 import java.util.List;
 import java.util.ArrayList;
 
+/**
+ * Main Result class implementing the Result pattern for elegant error handling.
+ * 
+ * <p>This class provides a type-safe way to handle operations that can either succeed or fail,
+ * eliminating the need for exception-based error handling in many scenarios.</p>
+ * 
+ * <p>Example usage:</p>
+ * <pre>{@code
+ * Result<User> result = Result.success(user);
+ * if (result.isSuccess()) {
+ *     User data = result.getData();
+ * } else {
+ *     Error error = result.getError();
+ * }
+ * }</pre>
+ * 
+ * @param <T> the type of data contained in successful results
+ * @author Spring Boot Result Starter
+ * @since 0.0.1
+ */
 public final class Result<T> extends ResultBase implements TransactionalOperation {
     private T data;
     private String message;
